@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Name — Local Business</title>
+  <meta name="description" content="Replace this with a one-sentence description of the business." />
+  <meta name="theme-color" content="#0c1117" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="Client Name" />
+  <meta property="og:description" content="Replace this with a one-sentence description of the business." />
+  <meta property="og:url" content="https://example.com/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#top">Client Name</a>
+    <nav class="nav" id="nav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call" href="tel:+15555550100">Call</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="Menu">Menu</button>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="kicker">City, ST</p>
+      <h1>Clear headline for the business</h1>
+      <p class="lede">One or two sentences: what they do, who it’s for, and why someone should walk in or call today.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#visit">Hours &amp; directions</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap grid-2">
+        <div>
+          <div class="section-head">
+            <p class="kicker">About</p>
+            <h2>The short story</h2>
+          </div>
+          <p>Swap this paragraph for the client’s origin story or what makes the shop worth a visit. Keep it concrete.</p>
+          <p>Second paragraph for offerings, neighborhood, or a promise (quality, speed, selection).</p>
+        </div>
+        <div class="ph">Logo or hero photo</div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">What we do</p>
+          <h2>Services</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Service one</h3>
+            <p>Short description. Replace with the thing people actually pay for.</p>
+          </article>
+          <article class="card">
+            <h3>Service two</h3>
+            <p>Short description. Keep it scannable on a phone.</p>
+          </article>
+          <article class="card">
+            <h3>Service three</h3>
+            <p>Short description. Add a fourth card if needed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Look around</p>
+          <h2>Gallery</h2>
+        </div>
+        <div class="grid-3">
+          <div class="ph">Photo 01</div>
+          <div class="ph">Photo 02</div>
+          <div class="ph">Photo 03</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="wrap grid-2">
+        <div class="card">
+          <p class="kicker">Hours</p>
+          <h2>When we’re open</h2>
+          <ul class="hours" id="hoursList"></ul>
+        </div>
+        <div class="card">
+          <p class="kicker">Find us</p>
+          <h2>Visit</h2>
+          <p>123 Main St<br />City, ST 00000</p>
+          <p><a href="tel:+15555550100">(555) 555-0100</a></p>
+          <p><a href="https://maps.google.com/?q=123+Main+St" target="_blank" rel="noopener">Open in Google Maps</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Say hello</p>
+          <h2>Contact</h2>
+        </div>
+        <form class="card" id="contactForm">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" required autocomplete="name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">Send message</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-row">
+      <div>© <span id="year">2026</span> Client Name</div>
+      <div>Replace with city · phone · socials</div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
