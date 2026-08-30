@@ -25,6 +25,6 @@ jobs:
 
       - name: Validate HTML structure
         run: |
-          grep -q "<!DOCTYPE html>" index.html
+          grep -qi "<!doctype html>" index.html
           grep -qi "<html" index.html
           grep -qi "</html>" index.html
