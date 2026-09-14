@@ -19,9 +19,12 @@ jobs:
         run: |
           test -f index.html
           test -f vercel.json
+          test -f robots.txt
+          test -f sitemap.xml
           test -f assets/css/styles.css
+          test -f assets/js/config.js
           test -f assets/js/main.js
-          test -f assets/img/favicon.svg
+          test -f assets/img/brand/favicon.svg
 
       - name: Validate HTML structure
         run: |
