@@ -1,20 +1,14 @@
-const BUSINESS = {
-  name: "Northline Workshop",
-  phone: "(503) 555-0147",
-  email: "hello@northline.work",
-  address: "2418 SE Division St, Portland, OR 97202",
-  mapsQuery: "2418 SE Division St, Portland, OR 97202",
-};
-
-const HOURS = [
-  { day: "Sunday", label: "Closed", closed: true },
-  { day: "Monday", label: "11:00 AM – 6:00 PM" },
-  { day: "Tuesday", label: "11:00 AM – 6:00 PM" },
-  { day: "Wednesday", label: "11:00 AM – 6:00 PM" },
-  { day: "Thursday", label: "11:00 AM – 7:00 PM" },
-  { day: "Friday", label: "11:00 AM – 7:00 PM" },
-  { day: "Saturday", label: "10:00 AM – 4:00 PM" },
-];
+// Syncs every element tagged data-business="..." to the BUSINESS config
+// in config.js, so contact info only has to change in one place.
+document.querySelectorAll('[data-business="phone-link"]').forEach((el) => {
+  el.href = `tel:${BUSINESS.phoneHref}`;
+});
+document.querySelectorAll('[data-business="email-link"]').forEach((el) => {
+  el.href = `mailto:${BUSINESS.email}`;
+});
+document.querySelectorAll('[data-business="address-link"]').forEach((el) => {
+  el.href = `https://maps.google.com/?q=${encodeURIComponent(BUSINESS.mapsQuery)}`;
+});
 
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -61,7 +55,7 @@ if (form) {
     const body = encodeURIComponent(
       `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || ""}\n\n${data.message}`
     );
-    window.location.href = `mailto:${BUSINESS.email}?subject=${encodeURIComponent("Northline website inquiry")}&body=${body}`;
+    window.location.href = `mailto:${BUSINESS.email}?subject=${encodeURIComponent(`${BUSINESS.name} website inquiry`)}&body=${body}`;
     if (status) status.textContent = "Opening your email app…";
   });
 }
