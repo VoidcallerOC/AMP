@@ -395,7 +395,7 @@ h2 { margin: 0; font-size: clamp(3rem, 5vw, 5.3rem); line-height: .93; }
 /* ==========================================================================
    TRADE MASTER — contractor conversion components
    Added on top of the base design system; reuses the same tokens so the
-   flat, editorial look carries through. Nothing here assumes HVAC.
+   flat, editorial look carries through. Nothing here assumes industry-specific.
    ========================================================================== */
 
 /* Demo banner — shown by main.js only when BUSINESS.demo === true */
@@ -481,3 +481,37 @@ h2 { margin: 0; font-size: clamp(3rem, 5vw, 5.3rem); line-height: .93; }
 .product-art img { width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 720px) { .hero-photo, .hero-photo img { min-height: 380px; } .photo-stamp { font-size: 2.35rem; } }
 .demo-banner[hidden] { display: none; }
+
+/* Adaptive Movement Parkour skin */
+:root { --color-primary: #17171a; --color-primary-soft: #25252b; --color-accent: #c52b2f; --color-accent-light: #f05a52; --color-highlight: #f4cf4d; --color-highlight-hover: #ffe273; --color-bg: #f4f1eb; --color-bg-alt: #e5e0d8; --color-bg-muted: #d4cec3; --color-white: #fffdf8; --color-text-muted: #615f5b; --color-border: rgba(23,23,26,.18); --color-border-on-dark: rgba(244,241,235,.22); }
+.hero-photo { position: relative; min-height: 520px; overflow: hidden; background: #25252b; }
+.hero-photo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; filter: saturate(.9) contrast(1.08); }
+.hero-photo::after { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(23,23,26,.02), rgba(23,23,26,.68)); content: ''; }
+.photo-stamp { position: absolute; z-index: 1; right: 7%; bottom: 8%; color: var(--color-highlight); font-size: 2.7rem; font-weight: 700; letter-spacing: .03em; line-height: .84; text-align: right; text-transform: uppercase; }
+.photo-stamp span { display: block; margin-top: 12px; color: rgba(244,241,235,.86); font-size: .58rem; letter-spacing: .12em; line-height: 1.3; }
+.program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.program-card { background: var(--color-white); border: 1px solid var(--color-border); transition: transform 200ms var(--ease-out), border-color 180ms ease; }
+.program-card:hover { transform: translateY(-5px); border-color: var(--color-accent); }
+.program-media { position: relative; aspect-ratio: 1.35 / 1; overflow: hidden; background: var(--color-primary-soft); }
+.program-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 350ms var(--ease-out); }
+.program-card:hover .program-media img { transform: scale(1.04); }
+.program-number { position: absolute; top: 14px; left: 16px; padding: 5px 8px; background: var(--color-highlight); color: var(--color-primary); font-size: .68rem; font-weight: 700; letter-spacing: .08em; }
+.program-copy { padding: 22px 22px 25px; }
+.program-age { color: var(--color-accent); font-size: .65rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.program-copy h3 { margin: 8px 0 8px; font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; }
+.program-copy p { min-height: 78px; margin: 0 0 18px; color: var(--color-text-muted); font-size: .84rem; }
+.program-copy .text-link { font-size: .74rem; }
+.facility-grid { display: grid; grid-template-columns: .82fr 1.18fr; align-items: center; gap: clamp(40px, 8vw, 120px); }
+.facility-copy { max-width: 460px; }
+.facility-copy h2 { margin: 28px 0; }
+.facility-copy > p:not(.eyebrow) { margin: 0 0 28px; color: rgba(244,241,235,.72); }
+.facility-image { position: relative; overflow: hidden; min-height: 360px; background: #25252b; }
+.facility-image img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; }
+.section-accent { background: var(--color-accent); color: var(--color-white); }
+.section-accent h2 em { color: var(--color-highlight); font-style: italic; }
+.final-cta-inner { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
+.final-cta-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 6px; }
+.final-cta .eyebrow { color: var(--color-highlight); }
+.final-cta .button-ghost-light { color: var(--color-white); border-color: rgba(255,255,255,.5); }
+@media (max-width: 900px) { .program-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px) { .hero-photo, .hero-photo img { min-height: 380px; } .photo-stamp { font-size: 2.1rem; } .program-grid { grid-template-columns: 1fr; } .program-copy p { min-height: 0; } .facility-grid { grid-template-columns: 1fr; } .final-cta-inner { align-items: start; flex-direction: column; } .site-nav.is-open { display: flex; } }

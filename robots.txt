@@ -1,4 +1,3 @@
-# User-agent: *
+User-agent: *
 Allow: /
-
-Sitemap: https://www.ampfitnesspgh.com/sitemap.xml
+Sitemap: https://amparkour.com/sitemap.xml

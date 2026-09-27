@@ -1,93 +1,71 @@
-// AMP Fitness Pittsburgh — verified public-site content
-// Forge foundation: config-driven, zero-build static architecture.
+// Adaptive Movement Parkour — AMP
+// Verified public content source: https://amparkour.com/
 
 const BUSINESS = {
-  name: "AMP Fitness",
+  name: "Adaptive Movement Parkour",
   shortName: "AMP",
-  tagline: "We train together. We give back together.",
-  trade: "Boutique HIIT & strength gym",
-  demo: false,
-  phone: "+1 (412) 930-4363",
-  phoneHref: "+14129304363",
-  email: "info@ampfitnesspgh.com",
-  address: "5992 Steubenville Pike, McKees Rocks, PA 15136",
-  mapsQuery: "5992 Steubenville Pike, McKees Rocks, PA 15136",
-  serviceAreaShort: "Pittsburgh, Pennsylvania",
+  tagline: "Increase quality of life through fun, engaging movement classes.",
+  phone: "(860) 612-8431",
+  phoneHref: "+18606128431",
+  email: "team@amparkour.com",
+  address: "50 Harrison St., Manchester, CT 06040",
+  mapsQuery: "50 Harrison St., Manchester, CT 06040",
+  serviceAreaShort: "Manchester, Connecticut",
   social: {
-    instagram: "https://www.instagram.com/ampfitnesspgh/",
-    facebook: "https://www.facebook.com/ampfitnesspgh",
+    facebook: "https://www.facebook.com/AMParkour/",
+    instagram: "",
   },
 };
 
 const CTA = {
-  primary: {
-    label: "Book Your First Class",
-    href: "https://www.mindbodyonline.com/explore/locations/amp-fitness-ce977bbf?utm_source=website&utm_medium=hero&utm_campaign=book",
-  },
+  primary: { label: "Find Your Program", href: "#programs" },
   secondary: { label: "Call AMP" },
+  register: { label: "See Schedule & Registration", href: "https://amparkour.com/" },
 };
 
 const HERO = {
-  eyebrow: BUSINESS.serviceAreaShort,
-  title: "Show up.<br /><em>Push hard.</em>",
-  lede: "Boutique HIIT and strength coaching in Pittsburgh. Expert-led 60-minute classes built for every fitness level — and a community that gives back.",
-  emergency: "3 classes for $30 · New members only",
-  badges: ["All levels welcome", "60 min coached classes", "$16,000+ donated"],
+  eyebrow: "Parkour · Aerial Silks · Movement",
+  title: "Move with purpose.<br /><em>Grow through movement.</em>",
+  lede: "Adaptive Movement Parkour helps kids, teens, and adults build strength, confidence, agility, and community in a safe, structured, genuinely fun environment.",
+  note: "Central Connecticut · Manchester, CT",
+  badges: ["All ages", "Structured & inclusive", "Try a class"],
 };
 
 const TRUST_ITEMS = [
-  { strong: "$16,000+ donated", label: "to Pittsburgh charities" },
-  { strong: "All levels welcome", label: "start where you are" },
-  { strong: "7 days a week", label: "morning to evening" },
-  { strong: "60 min", label: "coached classes" },
+  { strong: "All ages", label: "preschool through adult" },
+  { strong: "Movement first", label: "strength, agility & confidence" },
+  { strong: "Inclusive by design", label: "every student belongs" },
+  { strong: "Manchester, CT", label: "serving Central Connecticut" },
 ];
 
-const SERVICES = [
-  { name: "HIIT", description: "Alternating bursts of all-out effort with short recovery periods. Push your limits, build endurance, and make every rep count.", icon: "service", cta: "https://www.mindbodyonline.com/explore/locations/amp-fitness-ce977bbf?utm_source=website&utm_medium=class&utm_campaign=book" },
-  { name: "MAX", description: "Strength-focused sessions built around maximum repetitions. Challenge your muscles and track progress week after week.", icon: "offerings", cta: "https://www.mindbodyonline.com/explore/locations/amp-fitness-ce977bbf?utm_source=website&utm_medium=class&utm_campaign=book" },
-  { name: "Round Robin", description: "Move through exercises back-to-back, rest, then repeat. A smart, efficient way to build strength and stamina.", icon: "community", cta: "https://www.mindbodyonline.com/explore/locations/amp-fitness-ce977bbf?utm_source=website&utm_medium=class&utm_campaign=book" },
-  { name: "AMRAP", description: "Race the clock to complete as many rounds as possible. A true test of grit, conditioning, and mental toughness.", icon: "service", cta: "https://www.mindbodyonline.com/explore/locations/amp-fitness-ce977bbf?utm_source=website&utm_medium=class&utm_campaign=book" },
+const PROGRAMS = [
+  { name: "Mini Movers", age: "Ages 4–5", description: "A safe, structured introduction to movement, social skills, focus, and confidence through jumping, running, vaulting, and play.", image: "/assets/img/programs/mini-movers.jpg" },
+  { name: "Youth Parkour", age: "Kids", description: "Climbing walls, vaulting obstacles, and learning amazing skills while building strength, flexibility, agility, and self-esteem.", image: "/assets/img/programs/youth-parkour.jpg" },
+  { name: "Teen Parkour", age: "Teens", description: "A structured outlet for teen energy, taught for teenagers and designed to build skill, confidence, and a positive community.", image: "/assets/img/programs/teen-parkour.jpg" },
+  { name: "Adult Parkour", age: "Adults", description: "Step-by-step movement for real people: gain flexibility, strength, agility, relationships, and a new way to challenge yourself.", image: "/assets/img/programs/adult-parkour.jpg" },
+  { name: "Aerial Silks", age: "Kids & adults", description: "Learn fun circus skills while building upper-body and core strength, flexibility, and stabilizer muscles.", image: "/assets/img/programs/aerial-silks.jpg" },
+  { name: "Birthday Parties", age: "Ages 6+", description: "A private, hosted celebration with 1.5 hours of movement games, obstacle courses, gym activities, and a party space.", image: "/assets/img/programs/birthday-parties.jpg" },
 ];
 
-const WHY_US = {
-  lead: "AMP was built on a simple belief: fitness is better with community, and community is stronger when it gives back.",
-  points: [
-    { title: "Coached from start to finish", body: "Every class is 60 minutes with expert coaching — not a workout you have to figure out alone." },
-    { title: "Come as you are", body: "All fitness levels are welcome. Scale the workout to your body, your pace, and your goals." },
-    { title: "A reason beyond the workout", body: "Every membership helps fund charitable causes across Pittsburgh. Train together, give back together." },
-    { title: "Make showing up easier", body: "Classes run seven days a week, with simple booking through MindBody and formats for every kind of training day." },
-  ],
-};
-
-const SERVICE_AREA = {
-  statement: "Your Pittsburgh-area home base for coached HIIT, strength, and a community that keeps showing up.",
-  region: "McKees Rocks · Pittsburgh, PA",
-  cities: ["HIIT", "MAX", "Round Robin", "AMRAP", "EMOM", "Yoga", "Party"],
-};
-
-const PROJECTS = [
-  { title: "The class floor", service: "60-minute coached sessions", location: "AMP Fitness", description: "A full-body, high-energy training environment designed to keep you moving with purpose.", image: "/assets/img/hero/amp-gym-floor.jpg", placeholder: false },
-  { title: "Find your format", service: "HIIT · MAX · Round Robin · AMRAP", location: "All levels welcome", description: "Choose the class that matches your goals, then let the coach take it from there.", image: "/assets/img/content/amp-class.jpg", placeholder: false },
-  { title: "Community in motion", service: "Train together. Give back together.", location: "Pittsburgh charities", description: "$16,000+ donated and counting — because a stronger community is part of the workout.", image: "/assets/img/content/amp-equipment.jpg", placeholder: false },
+const DIFFERENCE = [
+  { title: "Schedule focused", body: "Programs were created for real family schedules, with class times that respect the rest of life." },
+  { title: "Community positive", body: "A place where kids learn positive habits and adults make meaningful, lasting friendships." },
+  { title: "Values oriented", body: "Physical prowess matters, but so do the mental and emotional benefits that travel beyond class." },
+  { title: "Movement based", body: "Students gain flexibility, agility, and strength whether or not they think of themselves as athletic." },
 ];
 
-const TESTIMONIALS = [
-  { quote: "Amazing gym with a very welcoming atmosphere! The trainers are kind, helpful and super supportive!", name: "Katie G.", meta: "March 2026 · Google review" },
-  { quote: "AMP PITTSBURGH has changed my life in so many ways! Until you experience the vibe, you will not know!", name: "Vince S.", meta: "February 2026 · Google review" },
-  { quote: "The workouts are challenging, but there is also an emphasis on listening to your own body so you never feel pressured to over-extend.", name: "Kyle P.", meta: "April 2025 · Google review" },
+const REVIEWS = [
+  { quote: "The owners and coaches are all highly skilled, extremely friendly, and very good at adapting their lessons to fit the ability levels of their students.", label: "Member feedback" },
+  { quote: "The classes are fun and lively, the coaches are caring, knowledgeable, and supportive, and the facility is well equipped and safe.", label: "Member feedback" },
+  { quote: "This is the perfect place for anyone who would like to learn Parkour or Martial Arts, but is worried about being too old, not athletic enough, or not fitting in.", label: "Member feedback" },
 ];
-
-const FORM = {
-  services: ["HIIT", "MAX", "Round Robin", "AMRAP", "Pricing", "Something else"],
-  timing: ["I want to book a first class", "I have a question about classes", "I want to learn about pricing", "Just saying hello"],
-};
 
 const HOURS = [
-  { day: "Sunday", label: "8:00 AM – 11:00 AM" },
-  { day: "Monday", label: "5:30 AM – 7:00 PM" },
-  { day: "Tuesday", label: "5:30 AM – 7:00 PM" },
-  { day: "Wednesday", label: "5:30 AM – 7:00 PM" },
-  { day: "Thursday", label: "5:30 AM – 7:00 PM" },
-  { day: "Friday", label: "5:30 AM – 7:00 PM" },
-  { day: "Saturday", label: "7:00 AM – 12:00 PM" },
+  { day: "Monday", label: "Contact AMP for current class times" },
+  { day: "Tuesday", label: "Contact AMP for current class times" },
+  { day: "Wednesday", label: "Contact AMP for current class times" },
+  { day: "Thursday", label: "Contact AMP for current class times" },
+  { day: "Friday", label: "Contact AMP for current class times" },
+  { day: "Saturday", label: "Classes, events & parties" },
+  { day: "Sunday", label: "Contact AMP for availability" },
 ];
