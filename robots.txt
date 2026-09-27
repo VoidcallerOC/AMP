@@ -1,5 +1,4 @@
-# Replace the domain below with the client's real production domain.
-User-agent: *
+# User-agent: *
 Allow: /
 
-Sitemap: https://www.your-client-domain.com/sitemap.xml
+Sitemap: https://www.ampfitnesspgh.com/sitemap.xml

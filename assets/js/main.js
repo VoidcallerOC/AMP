@@ -1,5 +1,5 @@
 // ============================================================
-// FORGE-CT TRADE MASTER — RENDERER
+// AMP FITNESS — FORGE FOUNDATION — RENDERER
 //
 // Reads the config in config.js and populates index.html. Section
 // headings and eyebrows stay static in the HTML (crawlable, no-JS
@@ -284,7 +284,7 @@ if (form) {
       `${data.message || ""}`,
     ];
     const body = encodeURIComponent(lines.join("\n"));
-    const subject = encodeURIComponent(`Estimate request — ${BUSINESS.name}`);
+    const subject = encodeURIComponent(`Question for ${BUSINESS.name}`);
     window.location.href = `mailto:${BUSINESS.email}?subject=${subject}&body=${body}`;
     if (status) status.textContent = "Opening your email app to send the request…";
   });
