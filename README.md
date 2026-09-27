@@ -1,27 +1,46 @@
-# Forge-CT client demo base
+# Forge-CT Trade Master
 
-A reusable **zero-build** foundation for premium local-business websites —
-one `index.html`, no framework, no compile step, no dependencies. Fork it
-per client, restyle it in minutes, ship it on Vercel.
+A reusable **zero-build** master template for Connecticut home-service
+contractors — one `index.html`, no framework, no compile step, no
+dependencies. Built around one job: turn local search traffic into
+estimate requests and phone calls.
 
-The default content ("Forge & Main," a fictional Millbrook, OH business) is
-placeholder copy that demonstrates the pattern — swap it out, don't ship it.
+**Conversion flow:** SEARCH → TRUST → SERVICE → PROOF → ESTIMATE / CALL
+**Primary CTA:** Request a Free Estimate · **Secondary CTA:** Call Now
+
+The default content is a **demo HVAC skin** — "Charter Oak Heating &
+Cooling," a fictional Greater Hartford business with clearly-marked
+placeholder data (a reserved `555-01xx` phone number, a `.example`
+email). It demonstrates the pattern; it is not a real business. While
+`BUSINESS.demo` is `true` a banner and per-item tags flag all sample
+content so it can never be mistaken for a real client's claims.
 
 Repo: https://github.com/VoidcallerOC/client-site-starter
 
+## Built for these trades
+
+HVAC · plumbing · electrical · roofing · landscaping · concrete/masonry ·
+painting · remodeling · junk removal · tree service — and any other local
+home-service contractor. **HVAC is the first finished skin; nothing in the
+architecture is HVAC-specific.**
+
 ## Architecture
 
-- `index.html` — all markup and copy, organized into clearly commented
-  sections (Header, Hero, Trust Strip, About, Offerings, Events, Featured,
-  Testimonials, Visit, Contact, Final CTA, Footer)
-- `assets/css/styles.css` — one stylesheet, design tokens at the top
-- `assets/js/config.js` — the business data every fork edits first
-- `assets/js/main.js` — behavior (mobile nav, hours, contact form) — rarely
-  needs edits
-- `assets/img/` — brand/hero/products/events/content/social subfolders (see
-  `assets/img/README.md`)
-- `vercel.json` — clean URLs, long-lived asset cache, baseline security headers
-- `robots.txt`, `sitemap.xml` — placeholder domain, update before launch
+- `index.html` — markup + static headings, organized into commented
+  sections (Header, Hero, Trust, Services, Why Us, Service Area, Projects,
+  Testimonials, Hours & Contact, Estimate form, Final CTA, Footer). Section
+  headings live here; repeating item lists render from config.
+- `assets/js/config.js` — **the source of truth.** Business identity,
+  contact, CTAs, trust items, services, why-us points, service area,
+  projects, testimonials, form options and hours. This is the file you edit.
+- `assets/js/main.js` — reads the config and renders it into the page
+  (contact sync, CTAs, all list sections, hours, mobile nav, estimate form).
+  Rarely needs edits.
+- `assets/css/styles.css` — one stylesheet, design tokens at the top.
+- `assets/img/` — `brand/ hero/ projects/ content/ social/` (see
+  `assets/img/README.md`).
+- `vercel.json` — clean URLs, long-lived asset cache, baseline security headers.
+- `robots.txt`, `sitemap.xml` — placeholder domain; update before launch.
 
 No build step: what's in the repo is what ships. Preview locally with:
 
@@ -29,50 +48,59 @@ No build step: what's in the repo is what ships. Preview locally with:
 python3 -m http.server 8000
 ```
 
-(paths in the HTML are absolute `/assets/...`, so serve from the repo root)
+(paths are absolute `/assets/...`, so serve from the repo root)
 
-## New client in about 30 minutes
+## New contractor client — edit config, replace copy/images, deploy
 
-1. On GitHub: **Use this template** (or clone) → new **private** repo named
-   after the client.
-2. **`assets/js/config.js`** — set `BUSINESS.name`, `phone`, `phoneHref`,
-   `email`, `mapsQuery`, and the weekly `HOURS`. These values automatically
-   sync to every phone/email/directions link in the page (look for
-   `data-business="..."` attributes in `index.html` if you need to find one).
-3. **`assets/css/styles.css`** — edit the `:root` design tokens at the top:
-   `--color-primary`, `--color-accent`, `--color-highlight`, backgrounds,
-   and (if the brand calls for it) swap `--font-display`/`--font-body` plus
-   the Google Fonts `<link>` in `index.html`'s `<head>`.
-4. **`index.html`** — search-replace the business name ("Forge & Main"),
-   then work section by section (each is marked with an HTML comment):
-   headline/lede in Hero, the three Offerings rows, Events cards (or delete
-   the section if it doesn't apply — see note below), Featured cards,
-   **replace the placeholder Testimonials with real reviews**, address in
-   Visit/Footer, nav labels, footer links.
-5. **SEO** — update `<title>`, meta description, canonical URL, and Open
-   Graph/Twitter tags in `<head>`; update `robots.txt` and `sitemap.xml`
-   with the real domain.
-6. Drop logo/photos into `assets/img/` (see `assets/img/README.md`) and
-   swap the favicon at `assets/img/brand/favicon.svg`.
-7. Import the repo into Vercel (static, no framework, no build command).
+1. **`assets/js/config.js`** — the whole job. Set `BUSINESS` (name, phone,
+   `phoneHref`, email, address, `mapsQuery`, service-area line, social),
+   then `CTA`, `HERO`, `TRUST_ITEMS`, `SERVICES` (3–6), `WHY_US`,
+   `SERVICE_AREA`, `PROJECTS`, `TESTIMONIALS`, `FORM` and `HOURS`.
+2. **Set `BUSINESS.demo = false`** once every value is the client's real,
+   verified information. This removes the demo banner and the "Demo review"
+   / "Sample project" tags — so only do it when the content is truly real.
+3. **`assets/css/styles.css`** — edit the `:root` tokens (`--color-primary`,
+   `--color-accent`, `--color-highlight`, backgrounds); swap
+   `--font-display`/`--font-body` + the Google Fonts `<link>` in `<head>`
+   if the brand calls for it.
+4. **SEO** — update `<title>`, meta description, canonical, Open Graph /
+   Twitter tags in `<head>`; update `robots.txt` and `sitemap.xml` with the
+   real domain. Section `<h1>`/`<h2>` copy is static in `index.html`.
+5. **Images** — drop real logo/photos in `assets/img/` (see its README),
+   swap the favicon, add `/assets/img/social/og-image.jpg` (1200×630) and
+   uncomment the `og:image` tag. Add real project photos and set each
+   project's `image:` path + `placeholder: false` in config.
+6. Import into Vercel (static, no framework, no build command).
 
-### About the Events / Community section
+## Anti-fabrication rules (non-negotiable)
 
-It's built with the first wave of client demos (gaming stores, comic shops)
-in mind — tournaments, new releases, community nights — but it's just a
-3-card grid. Rename it ("Classes," "Specials," "Workshops") for a different
-vertical, or delete the `<section id="events">` block, its footer link, and
-its nav link entirely if the business doesn't run events.
+- Never enter a claim the client hasn't confirmed — years in business,
+  ratings, licenses, insurance, certifications, awards, warranties,
+  response times, customer counts. If you can't verify it, leave it out.
+- Never present sample testimonials as real. Replace them with genuine,
+  permissioned reviews, or remove the section.
+- Never mark a project `placeholder: false` (or set `demo: false`) until
+  the content is real.
+- The trust strip and hero badges show **only** what's configured — so an
+  empty/removed item simply doesn't render.
+
+## The estimate form
+
+Front-end only, matching the zero-build architecture: submitting opens the
+visitor's email client pre-filled to `BUSINESS.email`. Nothing is stored
+and there is no backend. The form UI states this. Wire up a real form
+backend later if a client needs one — that's out of scope for the master.
 
 ## Design principles
 
-This starter deliberately avoids generic-template tells: no soft rounded
-cards, no drop-shadow-everywhere, no stock photography, no emoji-as-icons.
-Corners are either sharp or fully round (pills/circles) — see the comment
-at the top of `styles.css` before adding a mid-size border-radius.
+No generic-template tells: no soft rounded cards, no drop-shadow-everywhere,
+no stock photography, no emoji-as-icons, no meaningless animation. Corners
+are sharp or fully round (pills/circles). Motion is interaction-only. The
+premium feel comes from type, color and spacing — see the comment at the top
+of `styles.css` before adding a mid-size border-radius.
 
-## Drive system
+## Adding trade landing pages (optional)
 
-Client briefs, proposals, invoices:
-
-https://drive.google.com/drive/folders/1pVd0M_OjpkKASki85HYFomFXEhrjHE_P
+The architecture supports additional static pages (e.g. `/ac-repair`,
+`/heating`) by copying `index.html`, but **do not mass-generate thin SEO
+pages.** Add a page only when it has genuinely distinct, useful content.
